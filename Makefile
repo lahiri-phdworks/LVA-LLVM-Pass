@@ -21,4 +21,4 @@ bitcode_generation: llvmir_generation
 	opt -instnamer -mem2reg ./bin/test_case_5.bc -S -o ./bin/bitcodes/test_case_5_mem2reg.bc
 
 lvapass: 
-	opt -load ./build/live_variable_analysis_main_pass.so -lva < ./bin/bitcodes/test_case_5_mem2reg.bc -f 2> ./output/lvay_pass_5.txt
+	opt  -disable-output -load ./build/live_variable_analysis_main_pass.so -lva < ./bin/bitcodes/test_case_5_mem2reg.bc -f 2> ./output/lvay_pass_5.txt
