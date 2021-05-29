@@ -1,4 +1,4 @@
-; ModuleID = 'bin/test_case_5.bc'
+; ModuleID = 'tests/test_case_5.cpp'
 source_filename = "tests/test_case_5.cpp"
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
@@ -13,7 +13,7 @@ target triple = "x86_64-unknown-linux-gnu"
 define internal void @__cxx_global_var_init() #0 section ".text.startup" !dbg !1576 {
 entry:
   call void @_ZNSt8ios_base4InitC1Ev(%"class.std::ios_base::Init"* nonnull align 1 dereferenceable(1) @_ZStL8__ioinit), !dbg !1578
-  %i = call i32 @__cxa_atexit(void (i8*)* bitcast (void (%"class.std::ios_base::Init"*)* @_ZNSt8ios_base4InitD1Ev to void (i8*)*), i8* getelementptr inbounds (%"class.std::ios_base::Init", %"class.std::ios_base::Init"* @_ZStL8__ioinit, i32 0, i32 0), i8* @__dso_handle) #3, !dbg !1580
+  %0 = call i32 @__cxa_atexit(void (i8*)* bitcast (void (%"class.std::ios_base::Init"*)* @_ZNSt8ios_base4InitD1Ev to void (i8*)*), i8* getelementptr inbounds (%"class.std::ios_base::Init", %"class.std::ios_base::Init"* @_ZStL8__ioinit, i32 0, i32 0), i8* @__dso_handle) #3, !dbg !1580
   ret void, !dbg !1578
 }
 
@@ -42,8 +42,8 @@ entry:
   store i32 90, i32* %a, align 4, !dbg !1589
   call void @llvm.dbg.declare(metadata i32* %b, metadata !1590, metadata !DIExpression()), !dbg !1591
   store i32 89, i32* %b, align 4, !dbg !1591
-  %i = load i32, i32* %a, align 4, !dbg !1592
-  %cmp = icmp sge i32 %i, 90, !dbg !1594
+  %0 = load i32, i32* %a, align 4, !dbg !1592
+  %cmp = icmp sge i32 %0, 90, !dbg !1594
   br i1 %cmp, label %if.then, label %if.else, !dbg !1595
 
 if.then:                                          ; preds = %entry
@@ -112,7 +112,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !28 = distinct !DICompileUnit(language: DW_LANG_C_plus_plus, file: !29, producer: "clang version 13.0.0 (https://github.com/llvm/llvm-project.git 60a097e5112d81707ac65f943e970428b9a953dc)", isOptimized: false, runtimeVersion: 0, emissionKind: FullDebug, enums: !30, globals: !39, imports: !40, splitDebugInlining: false, nameTableKind: None)
 !29 = !DIFile(filename: "tests/test_case_5.cpp", directory: "/home/clustfuzz/Documents/Research/LVA-LLVM-Pass")
 !30 = !{!31}
-!31 = distinct !DICompositeType(tag: DW_TAG_enumeration_type, name: "_Lock_policy", scope: !33, file: !32, line: 49, baseType: !34, size: 32, elements: !35, identifier: "_ZTSN9__gnu_cxx12_Lock_policyE")
+!31 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "_Lock_policy", scope: !33, file: !32, line: 49, baseType: !34, size: 32, elements: !35, identifier: "_ZTSN9__gnu_cxx12_Lock_policyE")
 !32 = !DIFile(filename: "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/ext/concurrence.h", directory: "")
 !33 = !DINamespace(name: "__gnu_cxx", scope: null)
 !34 = !DIBasicType(name: "unsigned int", size: 32, encoding: DW_ATE_unsigned)
@@ -155,7 +155,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !71 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !72, file: !46, line: 87)
 !72 = !DISubprogram(name: "isblank", scope: !43, file: !43, line: 130, type: !44, flags: DIFlagPrototyped, spFlags: 0)
 !73 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !74, file: !76, line: 53)
-!74 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "lconv", file: !75, line: 51, size: 768, flags: DIFlagFwdDecl, identifier: "_ZTS5lconv")
+!74 = !DICompositeType(tag: DW_TAG_structure_type, name: "lconv", file: !75, line: 51, size: 768, flags: DIFlagFwdDecl, identifier: "_ZTS5lconv")
 !75 = !DIFile(filename: "/usr/include/locale.h", directory: "")
 !76 = !DIFile(filename: "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/clocale", directory: "")
 !77 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !78, file: !76, line: 54)
@@ -519,7 +519,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !435 = !DIDerivedType(tag: DW_TAG_typedef, name: "jmp_buf", file: !436, line: 45, baseType: !437)
 !436 = !DIFile(filename: "/usr/include/setjmp.h", directory: "")
 !437 = !DICompositeType(tag: DW_TAG_array_type, baseType: !438, size: 1600, elements: !439)
-!438 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "__jmp_buf_tag", file: !436, line: 33, size: 1600, flags: DIFlagFwdDecl, identifier: "_ZTS13__jmp_buf_tag")
+!438 = !DICompositeType(tag: DW_TAG_structure_type, name: "__jmp_buf_tag", file: !436, line: 33, size: 1600, flags: DIFlagFwdDecl, identifier: "_ZTS13__jmp_buf_tag")
 !439 = !{!440}
 !440 = !DISubrange(count: 1)
 !441 = !DIFile(filename: "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/csetjmp", directory: "")
@@ -569,7 +569,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !485 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !486, file: !490, line: 98)
 !486 = !DIDerivedType(tag: DW_TAG_typedef, name: "FILE", file: !487, line: 7, baseType: !488)
 !487 = !DIFile(filename: "/usr/include/x86_64-linux-gnu/bits/types/FILE.h", directory: "")
-!488 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "_IO_FILE", file: !489, line: 49, size: 1728, flags: DIFlagFwdDecl, identifier: "_ZTS8_IO_FILE")
+!488 = !DICompositeType(tag: DW_TAG_structure_type, name: "_IO_FILE", file: !489, line: 49, size: 1728, flags: DIFlagFwdDecl, identifier: "_ZTS8_IO_FILE")
 !489 = !DIFile(filename: "/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h", directory: "")
 !490 = !DIFile(filename: "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/cstdio", directory: "")
 !491 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !492, file: !490, line: 99)
@@ -577,7 +577,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !493 = !DIFile(filename: "/usr/include/stdio.h", directory: "")
 !494 = !DIDerivedType(tag: DW_TAG_typedef, name: "__fpos_t", file: !495, line: 14, baseType: !496)
 !495 = !DIFile(filename: "/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h", directory: "")
-!496 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "_G_fpos_t", file: !495, line: 10, size: 128, flags: DIFlagFwdDecl, identifier: "_ZTS9_G_fpos_t")
+!496 = !DICompositeType(tag: DW_TAG_structure_type, name: "_G_fpos_t", file: !495, line: 10, size: 128, flags: DIFlagFwdDecl, identifier: "_ZTS9_G_fpos_t")
 !497 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !498, file: !490, line: 101)
 !498 = !DISubprogram(name: "clearerr", scope: !493, file: !493, line: 757, type: !499, flags: DIFlagPrototyped, spFlags: 0)
 !499 = !DISubroutineType(types: !500)
@@ -753,7 +753,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !669 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !662, file: !490, line: 189)
 !670 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !671, file: !673, line: 127)
 !671 = !DIDerivedType(tag: DW_TAG_typedef, name: "div_t", file: !92, line: 62, baseType: !672)
-!672 = distinct !DICompositeType(tag: DW_TAG_structure_type, file: !92, line: 58, size: 64, flags: DIFlagFwdDecl, identifier: "_ZTS5div_t")
+!672 = !DICompositeType(tag: DW_TAG_structure_type, file: !92, line: 58, size: 64, flags: DIFlagFwdDecl, identifier: "_ZTS5div_t")
 !673 = !DIFile(filename: "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/cstdlib", directory: "")
 !674 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !675, file: !673, line: 128)
 !675 = !DIDerivedType(tag: DW_TAG_typedef, name: "ldiv_t", file: !92, line: 70, baseType: !676)
@@ -1531,7 +1531,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !1447 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !1448, file: !1451, line: 58)
 !1448 = !DIDerivedType(tag: DW_TAG_typedef, name: "fenv_t", file: !1449, line: 94, baseType: !1450)
 !1449 = !DIFile(filename: "/usr/include/x86_64-linux-gnu/bits/fenv.h", directory: "")
-!1450 = distinct !DICompositeType(tag: DW_TAG_structure_type, file: !1449, line: 75, size: 256, flags: DIFlagFwdDecl, identifier: "_ZTS6fenv_t")
+!1450 = !DICompositeType(tag: DW_TAG_structure_type, file: !1449, line: 75, size: 256, flags: DIFlagFwdDecl, identifier: "_ZTS6fenv_t")
 !1451 = !DIFile(filename: "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/fenv.h", directory: "")
 !1452 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !1453, file: !1451, line: 59)
 !1453 = !DIDerivedType(tag: DW_TAG_typedef, name: "fexcept_t", file: !1449, line: 68, baseType: !1415)
@@ -1589,7 +1589,7 @@ attributes #5 = { nofree nosync nounwind readnone speculatable willreturn }
 !1505 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !1506, file: !1509, line: 58)
 !1506 = !DIDerivedType(tag: DW_TAG_typedef, name: "imaxdiv_t", file: !1507, line: 275, baseType: !1508)
 !1507 = !DIFile(filename: "/usr/include/inttypes.h", directory: "")
-!1508 = distinct !DICompositeType(tag: DW_TAG_structure_type, file: !1507, line: 271, size: 128, flags: DIFlagFwdDecl, identifier: "_ZTS9imaxdiv_t")
+!1508 = !DICompositeType(tag: DW_TAG_structure_type, file: !1507, line: 271, size: 128, flags: DIFlagFwdDecl, identifier: "_ZTS9imaxdiv_t")
 !1509 = !DIFile(filename: "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/cinttypes", directory: "")
 !1510 = !DIImportedEntity(tag: DW_TAG_imported_declaration, scope: !2, entity: !1511, file: !1509, line: 61)
 !1511 = !DISubprogram(name: "imaxabs", scope: !1507, file: !1507, line: 290, type: !1512, flags: DIFlagPrototyped, spFlags: 0)

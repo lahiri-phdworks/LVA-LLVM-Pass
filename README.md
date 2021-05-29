@@ -7,6 +7,7 @@
 
 - [ ] Add New LLVM Passses for Complier Optimizations.
 - [ ] Add a Pass for Super Optimizations.
+- [ ] Migrate to New Pass Manager. [LLVM New Pass Manager](https://github.com/alexjung/Writing-an-LLVM-Pass-using-the-new-PassManager)
 
 ## Output :
 
