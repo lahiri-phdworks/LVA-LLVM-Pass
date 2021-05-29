@@ -6,4 +6,8 @@
 ## Updates :
 
 - [ ] Add New LLVM Passses for Complier Optimizations.
-- [ ] Add a Pass for Super Optimizations. 
+- [ ] Add a Pass for Super Optimizations.
+
+## Output :
+
+- Check the `output` folder. Input programs are from `tests` folder.

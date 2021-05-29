@@ -2,8 +2,8 @@
 
 /**
  * References : https://github.com/jarulraj/llvm/, https://llvm.org/doxygen/LiveVariables_8cpp_source.html
- * LVA Analysis on MAIN Function. 
-*/
+ * LVA Analysis on MAIN Function.
+ */
 
 using namespace llvm;
 
@@ -161,9 +161,10 @@ namespace
 } // namespace
 
 char Liveness::ID = 0;
-static RegisterPass<Liveness> X("lva", "Live Variable Analysis Pass", true, true);
+static RegisterPass<Liveness> X("liveness", "Live Variable Analysis Pass", true, true);
 
 static RegisterStandardPasses Y(
     PassManagerBuilder::EP_EarlyAsPossible,
     [](const PassManagerBuilder &Builder,
-       legacy::PassManagerBase &PM) { PM.add(new Liveness()); });
+       legacy::PassManagerBase &PM)
+    { PM.add(new Liveness()); });

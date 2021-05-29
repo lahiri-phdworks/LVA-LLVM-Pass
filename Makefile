@@ -11,9 +11,6 @@ llvm_lva_pass.so: llvm_lva_pass.o
 llvm_lva_pass.o: live_variable_analysis_main_pass.cpp
 	$(CXX) -c live_variable_analysis_main_pass.cpp -o ./build/live_variable_analysis_main_pass.o $(CXXFLAGS)
 
-clean: 
-	rm -rf ./output/* ./build/*  ./bin/* && cd ./bin && mkdir ./bitcodes
-
 llvmir_generation: 
 	$(CXX) -c -emit-llvm $(CXXFLAGS) ./tests/test_case_5.cpp -o ./bin/test_case_5.bc
 
@@ -21,4 +18,7 @@ bitcode_generation: llvmir_generation
 	opt -instnamer -mem2reg -enable-new-pm=0 ./bin/test_case_5.bc -S -o ./bin/bitcodes/test_case_5_mem2reg.bc
 
 lvapass: 
-	opt  -disable-output -enable-new-pm=0 -load ./build/live_variable_analysis_main_pass.so -lva < ./bin/bitcodes/test_case_5_mem2reg.bc -f 2> ./output/lvay_pass_5.txt
+	opt  -disable-output -enable-new-pm=0 -load ./build/live_variable_analysis_main_pass.so	-liveness < ./bin/bitcodes/test_case_5_mem2reg.bc -f 2> ./output/vars.log
+	
+clean: 
+	rm -rf ./output/* ./build/*  ./bin/* && cd ./bin && mkdir ./bitcodes
