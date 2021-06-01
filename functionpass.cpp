@@ -2,6 +2,10 @@
 #include "llvm/Passes/PassBuilder.h"
 #include "llvm/Passes/PassPlugin.h"
 #include "llvm/Support/raw_ostream.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/IR/Function.h"
+#include "llvm/IR/InstIterator.h"
+#include "llvm/Analysis/CFG.h"
 
 // only needed for printing
 #include <iostream>
@@ -20,6 +24,12 @@ namespace
             errs() << "Function : " << F.getName().str() << "\n";
             for (auto &BB : F)
             {
+				for (auto inst = BB.rbegin(); inst != BB.rend(); ++inst) {
+					Instruction *I = &*inst;
+					auto phi = dyn_cast<PHINode>(&*inst);
+					errs() << "Phi : " << phi << "\n";
+				}
+					
                 errs() << "Basic Block : " << BB.getName() << "\n";
             }
 
