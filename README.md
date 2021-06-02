@@ -12,3 +12,38 @@
 ## Output :
 
 - Check the `output` folder. Input programs are from `tests` folder.
+
+## References & Links : 
+
+-- New LLVM Pass Manager : 
+		- https://llvm.org/docs/NewPassManager.html
+		- https://llvm.org/docs/WritingAnLLVMNewPMPass.html
+
+### LLVM Doc : 
+
+For function paraments as operands, you can get it get it via Function Argumentslist()
+- Reference : https://llvm.org/doxygen/group__LLVMCCoreValueFunctionParameters.html
+
+- Value reference : http://llvm.org/doxygen/classllvm_1_1Value.html
+- User class : for getnumoperands, getoperands etc. https://llvm.org/doxygen/classllvm_1_1User.html
+
+Some other differences are listed here.
+- https://llvm.org/docs/ProgrammersManual.html#llvm-adt-densemap-h . Even C++ one is quadratic probed. 
+
+Where is "emit-llvm"? ASMWritter `AsmWritter.cpp`.
+- https://github.com/llvm-mirror/llvm/blob/master/tools/gold/gold-plugin.cpp#L232
+
+LLVM Starting : 
+- https://www.cs.cornell.edu/~asampson/blog/llvm.html
+
+LLVM Data Structures :
+- https://llvm.org/docs/ProgrammersManual.html#picking-the-right-data-structure-for-a-task
+
+LLVM RTTI
+- https://llvm.org/docs/HowToSetUpLLVMStyleRTTI.html#id1
+
+Inspection & Traversal over `CFG` in `IR`. 
+- https://llvm.org/docs/ProgrammersManual.html#basic-inspection-and-traversal-routines
+
+Adding a new instruction in IR
+- https://llvm.org/docs/ProgrammersManual.html#making-simple-changes
