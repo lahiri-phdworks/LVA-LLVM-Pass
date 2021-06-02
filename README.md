@@ -31,12 +31,12 @@
 	- https://github.com/llvm-mirror/llvm/blob/master/tools/gold/gold-plugin.cpp#L232
 	- https://www.cs.cornell.edu/~asampson/blog/llvm.html
 
-LLVM Data Structures :
-- https://llvm.org/docs/ProgrammersManual.html#picking-the-right-data-structure-for-a-task
+- `LLVM Data Structures` :
+	- https://llvm.org/docs/ProgrammersManual.html#picking-the-right-data-structure-for-a-task
 
-LLVM RTTI
-- https://llvm.org/docs/HowToSetUpLLVMStyleRTTI.html#id1
+- `LLVM RTTI` :
+	- https://llvm.org/docs/HowToSetUpLLVMStyleRTTI.html#id1
 
-- Inspection & Traversal over `CFG` in `IR`. 
+- Inspection & Traversal over `CFG` in `IR` :
 	- https://llvm.org/docs/ProgrammersManual.html#basic-inspection-and-traversal-routines
 	- https://llvm.org/docs/ProgrammersManual.html#making-simple-changes
